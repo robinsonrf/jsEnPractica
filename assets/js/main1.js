@@ -1,9 +1,11 @@
 function validar(nombre, asunto, mensaje) {
     let pasamosLaValidacion = true;
     document.querySelector(".resultado").innerHTML = "";
-    const patron = /[A-aZ-z]/gim;
-    const patron1 = /[A-aZ-z]/gim;
-    const patron2 = /[A-aZ-z]/gim;
+
+    //Correccion Expresion Regular
+    const patron = /^[a-zA-ZÀ-ÿ\s]{1,100}$/;
+    const patron1 = /[a-zA-ZÀ-ÿ0-9\s]{1,100}$/;
+    const patron2 = /[a-zA-ZÀ-ÿ0-9\s]{1,1000}$/;
 
     if (patron.test(nombre) == false) {
         document.querySelector(".errorNombre").innerHTML = "El nombre es requerido.";
